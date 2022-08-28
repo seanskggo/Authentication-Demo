@@ -25,10 +25,11 @@
 }
 
 .container h4 {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .container box {
+  padding: 30px;
   border-style: solid;
   border-width: 1px;
   border-radius: 20px;
