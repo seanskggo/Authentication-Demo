@@ -33,7 +33,7 @@
 .container box {
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 20px;
   border-radius: 20px;
   height: 530px;
   width: 80vw;
@@ -85,6 +85,7 @@
   .container box {
     width: 40vw;
     max-width: 500px;
+    padding: 50px;
   }
 }
 </style>
