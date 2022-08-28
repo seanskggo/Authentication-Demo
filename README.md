@@ -6,5 +6,4 @@ Username + Password and Federated Authentication Demo
 * Vue (w. Typescript)
 * Cypress
 * Pinia
-* Vitest
 * Firebase Authentication
