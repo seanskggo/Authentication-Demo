@@ -2,19 +2,17 @@
   <div class="container">
     <h1>Login</h1>
     <h4>
-      Login to your account using username and password or a federated identity
+      Login your account using username and password or a federated identity
     </h4>
     <box>
-      <text>Username</text>
-      <input class="input" placeholder="edit me" />
       <text>Email</text>
-      <input class="input" placeholder="edit me" />
+      <input class="input" placeholder="sample@sample.com" />
       <text>Password</text>
-      <input class="input" placeholder="edit me" />
-      <button class="button">Login</button>
+      <input type="password" class="input" placeholder="sample password" />
+      <button class="button">Create Account</button>
       <div class="federated">
         <button class="button">Google</button>
-        <div class="space"/>
+        <space class="space" />
         <button class="button">Facebook</button>
       </div>
     </box>
@@ -52,7 +50,7 @@
   padding: 50px;
   border: 1px solid rgb(116, 116, 116);
   border-radius: 20px;
-  height: 550px;
+  height: 530px;
   width: 80vw;
   max-width: 400px;
   color: var(--vt-c-green);
