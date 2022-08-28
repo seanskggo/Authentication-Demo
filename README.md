@@ -1,1 +1,1 @@
-# Authentication-Demo
+# Authentication Demo
