@@ -5,11 +5,23 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <div class="wrapper">
+      <h2>Authentication Demo</h2>
+      <divider class="divider" />
+      <p>
+        This project demonstrates the application of a firebase authenication system 
+        that leverages traditional username and password authentication as well as 
+        federated identities.
+      </p>
+      <h4>Menu</h4>
+      <divider class="divider" />
       <nav>
         <RouterLink to="/">Login</RouterLink>
         <RouterLink to="/create-account">Create Account</RouterLink>
         <RouterLink to="/reset-password">Reset Password</RouterLink>
       </nav>
+      <h4>Auth Token</h4>
+      <divider class="divider" />
+      <p>Your auth token is: ljshdfkhsafsfhwe7fya87sf</p>
     </div>
   </header>
 
@@ -17,6 +29,24 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+p {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  font-size: 13px;
+}
+
+.divider {
+  border: 0.5px solid rgb(194, 194, 194);
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -24,9 +54,10 @@ header {
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -60,7 +91,11 @@ nav a:first-of-type {
     font-size: 1rem;
 
     padding: 1rem 0;
-    margin-top: 1rem;
+    margin-top: 0rem;
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 }
 </style>
