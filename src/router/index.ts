@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/create-account',
       name: 'Create Account',
-      component: () => import('../views/ResetPasswordView.vue')
+      component: () => import('../views/CreateAccountView.vue')
     }
   ]
 })

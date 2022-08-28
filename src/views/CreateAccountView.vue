@@ -1,9 +1,9 @@
 <template>
   <div class="about">
-    <h1>Reset Password</h1>
+    <h1>Create Account</h1>
   </div>
 </template>
-
+  
 <style>
 @media (min-width: 1024px) {
   .about {
@@ -13,3 +13,4 @@
   }
 }
 </style>
+  
