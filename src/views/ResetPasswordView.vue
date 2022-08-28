@@ -1,15 +1,70 @@
 <template>
-  <div class="about">
-    <h1>Reset Password</h1>
+  <div class="container">
+    <box>
+      <text>Email</text>
+      <input class="input" placeholder="sample@sample.com" />
+      <button class="button">Send Reset Email</button>
+    </box>
   </div>
 </template>
 
 <style>
+.container {
+  display: flex;
+  height: 85vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container box {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  height: 530px;
+  width: 80vw;
+  max-width: 400px;
+  color: var(--vt-c-green);
+}
+
+.input {
+  padding: 15px;
+  border: 1px solid rgb(176, 176, 176);;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.input:focus {
+  outline: none !important;
+  border: 1px solid var(--vt-c-green);
+  border-radius: 10px;
+}
+
+.button {
+  background-color: transparent;
+  border-color: var(--vt-c-green);
+  border-radius: 30px;
+  border-width: 1px;
+  padding: 10px;
+  color: var(--vt-c-green);
+  margin-top: 15px;
+  font-size: 15px;
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
-  .about {
+  .container {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
+  }
+
+  .container box {
+    width: 40vw;
+    max-width: 500px;
+    padding: 50px;
   }
 }
 </style>
