@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <h2>Authentication Demo</h2>
       <divider class="divider" />
       <p>
-        This project demonstrates the application of a firebase authenication system 
+        This project demonstrates the application of a firebase authentication system 
         that leverages traditional username and password authentication as well as 
         federated identities.
       </p>
