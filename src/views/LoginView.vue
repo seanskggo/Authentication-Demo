@@ -5,7 +5,13 @@
       Login to your account using username and password or a federated identity
     </h4>
     <box>
-      asdf
+      <text>Username</text>
+      <input class="input" placeholder="edit me" />
+      <text>Email</text>
+      <input class="input" placeholder="edit me" />
+      <text>Password</text>
+      <input class="input" placeholder="edit me" />
+      <button class="button">Login</button>
     </box>
   </div>
 </template>
@@ -32,15 +38,42 @@
 }
 
 .container box {
-  padding: 30px;
-  border-style: solid;
-  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  border: 1px solid rgb(116, 116, 116);
   border-radius: 20px;
-  border-color: black;
   height: 450px;
   width: 80vw;
   max-width: 400px;
   color: var(--vt-c-green);
+}
+
+.input {
+  padding: 15px;
+  border: 1px solid rgb(176, 176, 176);;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.input:focus {
+  outline: none !important;
+  border: 1px solid var(--vt-c-green);
+  border-radius: 10px;
+}
+
+.button {
+  background-color: transparent;
+  border-color: var(--vt-c-green);
+  border-radius: 30px;
+  border-width: 1px;
+  padding: 10px;
+  color: var(--vt-c-green);
+  margin-top: 15px;
+  font-size: 15px;
 }
 
 @media (min-width: 1024px) {
