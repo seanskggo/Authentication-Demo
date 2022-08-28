@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Login</h1>
     <h4>
-      asdfasdf
+      Login to your account using username and password or a federated identity
     </h4>
     <box>
       asdf
@@ -26,6 +26,9 @@
 
 .container h4 {
   margin-bottom: 30px;
+  max-width: 400px;
+  text-align: center;
+  font-size: 13px;
 }
 
 .container box {
