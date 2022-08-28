@@ -1,15 +1,11 @@
 <template>
   <div class="container">
-    <h1>Login</h1>
-    <h4>
-      Login your account using username and password or a federated identity
-    </h4>
     <box>
       <text>Email</text>
       <input class="input" placeholder="sample@sample.com" />
       <text>Password</text>
       <input type="password" class="input" placeholder="sample password" />
-      <button class="button">Create Account</button>
+      <button class="button">Login</button>
       <div class="federated">
         <button class="button">Google</button>
         <space class="space" />
@@ -32,23 +28,11 @@
   flex-direction: column;
 }
 
-.container h1 {
-  color: var(--vt-c-green);
-  margin-bottom: 5px;
-}
-
-.container h4 {
-  margin-bottom: 30px;
-  max-width: 400px;
-  text-align: center;
-  font-size: 13px;
-}
-
 .container box {
   display: flex;
   flex-direction: column;
   padding: 50px;
-  border: 1px solid rgb(116, 116, 116);
+  justify-content: center;
   border-radius: 20px;
   height: 530px;
   width: 80vw;

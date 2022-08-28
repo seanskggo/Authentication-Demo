@@ -1,9 +1,5 @@
 <template>
   <div class="container">
-    <h1>Create Account</h1>
-    <h4>
-      Create your account using username and password or a federated identity
-    </h4>
     <box>
       <text>Username</text>
       <input class="input" placeholder="sample" />
@@ -34,23 +30,10 @@
   flex-direction: column;
 }
 
-.container h1 {
-  color: var(--vt-c-green);
-  margin-bottom: 5px;
-}
-
-.container h4 {
-  margin-bottom: 30px;
-  max-width: 400px;
-  text-align: center;
-  font-size: 13px;
-}
-
 .container box {
   display: flex;
   flex-direction: column;
   padding: 50px;
-  border: 1px solid rgb(116, 116, 116);
   border-radius: 20px;
   height: 530px;
   width: 80vw;
