@@ -12,11 +12,20 @@
       <text>Password</text>
       <input class="input" placeholder="edit me" />
       <button class="button">Login</button>
+      <div class="federated">
+        <button class="button">Google</button>
+        <div class="space"/>
+        <button class="button">Facebook</button>
+      </div>
     </box>
   </div>
 </template>
 
 <style>
+.space {
+  width: 40px;
+}
+
 .container {
   display: flex;
   height: 85vh;
@@ -43,7 +52,7 @@
   padding: 50px;
   border: 1px solid rgb(116, 116, 116);
   border-radius: 20px;
-  height: 450px;
+  height: 550px;
   width: 80vw;
   max-width: 400px;
   color: var(--vt-c-green);
@@ -74,6 +83,15 @@
   color: var(--vt-c-green);
   margin-top: 15px;
   font-size: 15px;
+  width: 100%;
+}
+
+.federated {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
 @media (min-width: 1024px) {
