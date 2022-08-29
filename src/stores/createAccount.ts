@@ -31,7 +31,7 @@ export const createAccountStore = defineStore({
           this.password = ''
           this.email = ''
         })
-        .catch((e) => console.log(e.message))
+        .catch((e) => cred.status = e.message)
     }
   }
 })
