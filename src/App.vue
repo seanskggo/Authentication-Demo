@@ -47,7 +47,6 @@ p {
 stats {
   margin-top: 10px;
   font-size: 13px;
-  max-width: 40vw;
   word-wrap: break-word;
 }
 
