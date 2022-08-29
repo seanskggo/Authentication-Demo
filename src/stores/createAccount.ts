@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 
 export const createAccountStore = defineStore({
   id: 'createAccount',
@@ -9,10 +10,14 @@ export const createAccountStore = defineStore({
   }),
   actions: {
     createAccount() {
-      console.log(this.username)
-      console.log(this.password)
-      console.log(this.email)
-      console.log("ASdfasdfads")
+      const auth = getAuth()
+      createUserWithEmailAndPassword(getAuth(), this.email, this.password)
+        .then(async (res) => {
+          await updateProfile(res.user, { displayName: 'BOBBY' })
+          console.log("REGISTERED")
+          console.log(auth.currentUser)
+        })
+        .catch((e) => console.log(e.message))
     }
   }
 })
