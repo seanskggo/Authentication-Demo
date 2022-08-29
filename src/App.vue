@@ -26,10 +26,11 @@ const credentials = credentialsStore()
       <p>{{  credentials.status  }}</p>
       <h4>Auth Credentials</h4>
       <divider class="divider" />
+      <stats>User ID: {{  credentials.uid  }}</stats>
       <stats>Username: {{  credentials.username  }}</stats>
       <stats>Email: {{  credentials.email  }}</stats>
-      <stats>Access Token: {{  credentials.token  }}</stats>
-      <stats>User ID: {{  credentials.uid  }}</stats>
+      <stats>Access Token: {{  credentials.accessToken  }}</stats>
+      <stats>Refresh Token: {{  credentials.refreshToken  }}</stats>
     </div>
   </header>
 
@@ -47,6 +48,8 @@ stats {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 13px;
+  max-width: 400px;
+  word-wrap: break-word;
 }
 
 .divider {

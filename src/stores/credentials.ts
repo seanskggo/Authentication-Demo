@@ -5,7 +5,8 @@ export const credentialsStore = defineStore({
   state: () => ({
     status: 'Logged out',
     username: '',
-    token: '',
+    accessToken: '',
+    refreshToken: '',
     uid: '',
     email: '',
   })
