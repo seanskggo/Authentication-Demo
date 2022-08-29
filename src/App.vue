@@ -21,13 +21,15 @@ const credentials = credentialsStore()
         <RouterLink to="/create-account">Create Account</RouterLink>
         <RouterLink to="/reset-password">Reset Password</RouterLink>
       </nav>
+      <h4>Console</h4>
+      <divider class="divider" />
+      <p>{{  credentials.status  }}</p>
       <h4>Auth Credentials</h4>
       <divider class="divider" />
-      <stats>Status: {{ credentials.status }}</stats>
-      <stats>Username: {{ credentials.username }}</stats>
-      <stats>Email: {{ credentials.email }}</stats>
-      <stats>Access Token: {{ credentials.token }}</stats>
-      <stats>User ID: {{ credentials.uid }}</stats>
+      <stats>Username: {{  credentials.username  }}</stats>
+      <stats>Email: {{  credentials.email  }}</stats>
+      <stats>Access Token: {{  credentials.token  }}</stats>
+      <stats>User ID: {{  credentials.uid  }}</stats>
     </div>
   </header>
 
