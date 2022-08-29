@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { credentialsStore } from './stores/credentials';
+const credentials = credentialsStore()
 </script>
 
 <template>
@@ -8,8 +10,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <h2>Authentication Demo</h2>
       <divider class="divider" />
       <p>
-        This project demonstrates the application of a firebase authentication system 
-        that leverages traditional username and password authentication as well as 
+        This project demonstrates the application of a firebase authentication system
+        that leverages traditional username and password authentication as well as
         federated identities.
       </p>
       <h4>Menu</h4>
@@ -19,9 +21,13 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/create-account">Create Account</RouterLink>
         <RouterLink to="/reset-password">Reset Password</RouterLink>
       </nav>
-      <h4>Auth Token</h4>
+      <h4>Auth Credentials</h4>
       <divider class="divider" />
-      <p>Your auth token is: ljshdfkhsafsfhwe7fya87sf</p>
+      <stats>Status: {{ credentials.status }}</stats>
+      <stats>Username: {{ credentials.username }}</stats>
+      <stats>Email: {{ credentials.email }}</stats>
+      <stats>Access Token: {{ credentials.token }}</stats>
+      <stats>User ID: {{ credentials.uid }}</stats>
     </div>
   </header>
 
@@ -32,6 +38,12 @@ import { RouterLink, RouterView } from 'vue-router'
 p {
   margin-top: 1rem;
   margin-bottom: 3rem;
+  font-size: 13px;
+}
+
+stats {
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 13px;
 }
 
