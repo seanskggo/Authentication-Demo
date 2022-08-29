@@ -20,7 +20,7 @@ export const createAccountStore = defineStore({
         .then(async (res) => {
           await updateProfile(res.user, { displayName: this.username })
           const accessToken = await res.user.getIdToken()
-          cred.setCreds({
+          cred.setCreds(res.user, {
             ...res.user,
             status: "Registered and logged in successfully",
             accessToken,

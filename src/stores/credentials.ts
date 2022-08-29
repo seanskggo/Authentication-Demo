@@ -1,9 +1,10 @@
-import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
+import { deleteUser, getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, type User } from '@firebase/auth';
 import { defineStore } from 'pinia'
 
 export const credentialsStore = defineStore({
   id: 'credentials',
   state: () => ({
+    user: {} as User,
     status: 'User not logged in',
     username: '',
     accessToken: '',
@@ -12,7 +13,7 @@ export const credentialsStore = defineStore({
     email: '',
   }),
   actions: {
-    setCreds(creds: {
+    setCreds(user: User, creds: {
       status: string | null;
       displayName: string | null;
       email: string | null;
@@ -20,8 +21,8 @@ export const credentialsStore = defineStore({
       refreshToken: string | null;
       uid: string | null;
     }) {
+      this.user = user
       const { displayName, status, email, accessToken, refreshToken, uid } = creds
-      console.log(refreshToken)
       if (status) this.status = status
       this.username = displayName ? displayName : 'N/A'
       this.email = email ? email : 'N/A'
@@ -33,7 +34,7 @@ export const credentialsStore = defineStore({
       signInWithPopup(getAuth(), new GoogleAuthProvider)
         .then(async (res) => {
           const accessToken = await res.user.getIdToken()
-          this.setCreds({
+          this.setCreds(res.user, {
             ...res.user,
             status: "Logged in successfully via Google",
             accessToken,
@@ -46,12 +47,25 @@ export const credentialsStore = defineStore({
       signInWithPopup(getAuth(), new GithubAuthProvider)
         .then(async (res) => {
           const accessToken = await res.user.getIdToken()
-          this.setCreds({
+          this.setCreds(res.user, {
             ...res.user,
             status: "Logged in successfully via Github",
             accessToken,
             refreshToken: res.user.refreshToken
           })
+        })
+        .catch((e) => this.status = e.message)
+    },
+    deleteUser() {
+      deleteUser(this.user)
+        .then(async () => {
+          this.user = {} as User
+          this.status = 'Deleted user successfully'
+          this.username = ''
+          this.accessToken = ''
+          this.refreshToken = ''
+          this.uid = ''
+          this.email = ''
         })
         .catch((e) => this.status = e.message)
     }

@@ -14,7 +14,7 @@ export const loginStore = defineStore({
       signInWithEmailAndPassword(getAuth(), this.email, this.password)
         .then(async (res) => {
           const accessToken = await res.user.getIdToken()
-          cred.setCreds({
+          cred.setCreds(res.user, {
             ...res.user,
             status: "Logged in successfully",
             accessToken,
