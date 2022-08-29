@@ -18,7 +18,7 @@ const cred = credentialsStore()
       <div class="federated">
         <button @click="cred.loginWithGoogle()" class="button">Google</button>
         <space class="space" />
-        <button class="button">Facebook</button>
+        <button @click="cred.loginWithGithub()" class="button">Github</button>
       </div>
     </box>
   </div>

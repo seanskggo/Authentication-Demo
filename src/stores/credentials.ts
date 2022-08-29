@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
+import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
 import { defineStore } from 'pinia'
 
 export const credentialsStore = defineStore({
@@ -36,6 +36,19 @@ export const credentialsStore = defineStore({
           this.setCreds({
             ...res.user,
             status: "Logged in successfully via Google",
+            accessToken,
+            refreshToken: res.user.refreshToken
+          })
+        })
+        .catch((e) => this.status = e.message)
+    },
+    loginWithGithub() {
+      signInWithPopup(getAuth(), new GithubAuthProvider)
+        .then(async (res) => {
+          const accessToken = await res.user.getIdToken()
+          this.setCreds({
+            ...res.user,
+            status: "Logged in successfully via Github",
             accessToken,
             refreshToken: res.user.refreshToken
           })
