@@ -1,13 +1,18 @@
+<script setup lang="ts">
+import { createAccountStore } from '@/stores/createAccount';
+const store = createAccountStore()
+</script>
+  
 <template>
   <div class="container">
     <box>
       <text>Username</text>
-      <input class="input" placeholder="sample" />
+      <input v-model="store.username" class="input" placeholder="sample" />
       <text>Email</text>
-      <input class="input" placeholder="sample@sample.com" />
+      <input v-model="store.email" class="input" placeholder="sample@sample.com" />
       <text>Password</text>
-      <input type="password" class="input" placeholder="sample password" />
-      <button class="button">Create Account</button>
+      <input v-model="store.password" type="password" class="input" placeholder="sample password" />
+      <button class="button" @click="store.createAccount()">Create Account</button>
       <div class="federated">
         <button class="button">Google</button>
         <space class="space" />
@@ -43,7 +48,8 @@
 
 .input {
   padding: 15px;
-  border: 1px solid rgb(176, 176, 176);;
+  border: 1px solid rgb(176, 176, 176);
+  ;
   border-top: none;
   border-left: none;
   border-right: none;

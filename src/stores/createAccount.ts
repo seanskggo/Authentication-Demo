@@ -8,19 +8,11 @@ export const createAccountStore = defineStore({
     password: '',
   }),
   actions: {
-    setUsername(username: string) {
-      this.username = username
-    },
-    setPassword(password: string) {
-      this.username = password
-    },
-    setEmail(email: string) {
-      this.username = email
-    },
     createAccount() {
       console.log(this.username)
       console.log(this.password)
       console.log(this.email)
+      console.log("ASdfasdfads")
     }
   }
 })
