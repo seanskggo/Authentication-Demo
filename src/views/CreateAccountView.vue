@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { createAccountStore } from '@/stores/createAccount';
+import { credentialsStore } from '@/stores/credentials';
 const store = createAccountStore()
+const cred = credentialsStore()
 </script>
   
 <template>
@@ -14,7 +16,7 @@ const store = createAccountStore()
       <input v-model="store.password" type="password" class="input" placeholder="sample password" />
       <button class="button" @click="store.createAccount()">Create Account</button>
       <div class="federated">
-        <button class="button">Google</button>
+        <button @click="cred.loginWithGoogle()" class="button">Google</button>
         <space class="space" />
         <button class="button">Facebook</button>
       </div>

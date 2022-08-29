@@ -1,3 +1,4 @@
+import { getAuth, GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
 import { defineStore } from 'pinia'
 
 export const credentialsStore = defineStore({
@@ -27,6 +28,19 @@ export const credentialsStore = defineStore({
       this.uid = uid ? uid : 'N/A'
       this.accessToken = accessToken ? accessToken.substring(0, 50) + '...' : 'N/A'
       this.refreshToken = refreshToken ? refreshToken.substring(0, 50) + '...' : 'N/A'
+    },
+    loginWithGoogle() {
+      signInWithPopup(getAuth(), new GoogleAuthProvider)
+        .then(async (res) => {
+          const accessToken = await res.user.getIdToken()
+          this.setCreds({
+            ...res.user,
+            status: "Logged in successfully via Google",
+            accessToken,
+            refreshToken: res.user.refreshToken
+          })
+        })
+        .catch((e) => this.status = e.message)
     }
   }
 })
