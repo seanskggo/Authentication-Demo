@@ -13,7 +13,7 @@ export const createAccountStore = defineStore({
       const auth = getAuth()
       createUserWithEmailAndPassword(getAuth(), this.email, this.password)
         .then(async (res) => {
-          await updateProfile(res.user, { displayName: 'BOBBY' })
+          await updateProfile(res.user, { displayName: this.username })
           console.log("REGISTERED")
           console.log(auth.currentUser)
         })
