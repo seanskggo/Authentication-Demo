@@ -11,6 +11,10 @@ export const createAccountStore = defineStore({
   actions: {
     createAccount() {
       const auth = getAuth()
+      if (!this.username) {
+        console.log("Invalid Username")
+        return 
+      }
       createUserWithEmailAndPassword(getAuth(), this.email, this.password)
         .then(async (res) => {
           await updateProfile(res.user, { displayName: this.username })
