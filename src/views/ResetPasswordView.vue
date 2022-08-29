@@ -1,8 +1,13 @@
+<script setup lang="ts">
+import { resetPasswordStore } from '@/stores/resetPassword';
+const store = resetPasswordStore()
+</script>
+  
 <template>
   <div class="container">
     <box>
       <text>Email</text>
-      <input class="input" placeholder="sample@sample.com" />
+      <input v-model="store.email" class="input" placeholder="sample@sample.com" />
       <button class="button">Send Reset Email</button>
     </box>
   </div>
@@ -30,7 +35,7 @@
 
 .input {
   padding: 15px;
-  border: 1px solid rgb(176, 176, 176);;
+  border: 1px solid rgb(176, 176, 176);
   border-top: none;
   border-left: none;
   border-right: none;
