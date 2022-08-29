@@ -10,10 +10,11 @@ export const loginStore = defineStore({
   }),
   actions: {
     login() {
+      const cred = credentialsStore()
       signInWithEmailAndPassword(getAuth(), this.email, this.password)
         .then(async (res) => {
           const accessToken = await res.user.getIdToken()
-          credentialsStore().setCreds({
+          cred.setCreds({
             ...res.user,
             status: "Logged in successfully",
             accessToken,
@@ -22,7 +23,7 @@ export const loginStore = defineStore({
           this.password = ''
           this.email = ''
         })
-        .catch((e) => credentialsStore().status = e.message)
+        .catch((e) => cred.status = e.message)
     }
   }
 })

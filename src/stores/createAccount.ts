@@ -11,15 +11,16 @@ export const createAccountStore = defineStore({
   }),
   actions: {
     createAccount() {
+      const cred = credentialsStore()
       if (!this.username) {
-        credentialsStore().status = "Invalid Username"
+        cred.status = "Invalid Username"
         return
       }
       createUserWithEmailAndPassword(getAuth(), this.email, this.password)
         .then(async (res) => {
           await updateProfile(res.user, { displayName: this.username })
           const accessToken = await res.user.getIdToken()
-          credentialsStore().setCreds({
+          cred.setCreds({
             ...res.user,
             status: "Registered and logged in successfully",
             accessToken,
@@ -29,7 +30,7 @@ export const createAccountStore = defineStore({
           this.password = ''
           this.email = ''
         })
-        .catch((e) => credentialsStore().status = e.message)
+        .catch((e) => cred.status = e.message)
     }
   }
 })
