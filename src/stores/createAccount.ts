@@ -25,8 +25,8 @@ export const createAccountStore = defineStore({
           cred.username = res.user.displayName ? res.user.displayName : 'N/A'
           cred.email = res.user.email ? res.user.email : 'N/A'
           cred.uid = res.user.uid ? res.user.uid : 'N/A'
-          cred.accessToken = accessToken ? accessToken : 'N/A'
-          cred.refreshToken = res.user.refreshToken ? res.user.refreshToken : 'N/A'
+          cred.accessToken = accessToken ? accessToken.substring(0, 50) + '...' : 'N/A'
+          cred.refreshToken = res.user.refreshToken ? res.user.refreshToken.substring(0, 50) + '...' : 'N/A'
         })
         .catch((e) => console.log(e.message))
     }
