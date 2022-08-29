@@ -8,7 +8,7 @@ const store = resetPasswordStore()
     <box>
       <text>Email</text>
       <input v-model="store.email" class="input" placeholder="sample@sample.com" />
-      <button class="button">Send Reset Email</button>
+      <button @click="store.resetPassword()" class="button">Send Reset Email</button>
     </box>
   </div>
 </template>

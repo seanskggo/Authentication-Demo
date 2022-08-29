@@ -6,7 +6,7 @@ export const resetPasswordStore = defineStore({
     email: '',
   }),
   actions: {
-    createAccount() {
+    resetPassword() {
       console.log(this.email)
       console.log("ASdfasdfads")
     }

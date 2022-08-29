@@ -7,7 +7,7 @@ export const loginStore = defineStore({
     password: '',
   }),
   actions: {
-    createAccount() {
+    login() {
       console.log(this.password)
       console.log(this.email)
       console.log("ASdfasdfads")

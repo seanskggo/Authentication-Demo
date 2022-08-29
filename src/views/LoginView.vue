@@ -10,7 +10,7 @@ const store = loginStore()
       <input v-model="store.email" class="input" placeholder="sample@sample.com" />
       <text>Password</text>
       <input v-model="store.password" type="password" class="input" placeholder="sample password" />
-      <button class="button">Login</button>
+      <button @click="store.login()" class="button">Login</button>
       <div class="federated">
         <button class="button">Google</button>
         <space class="space" />
