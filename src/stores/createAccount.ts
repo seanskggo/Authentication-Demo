@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { credentialsStore } from './credentials'
-import { setCreds } from '@/lib/utils'
 
 const cred = credentialsStore()
 
@@ -22,7 +21,7 @@ export const createAccountStore = defineStore({
         .then(async (res) => {
           await updateProfile(res.user, { displayName: this.username })
           const accessToken = await res.user.getIdToken()
-          setCreds({
+          cred.setCreds({
             ...res.user,
             status: "Registered and logged in successfully",
             accessToken,
