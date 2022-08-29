@@ -1,10 +1,15 @@
+<script setup lang="ts">
+import { loginStore } from '@/stores/login';
+const store = loginStore()
+</script>
+
 <template>
   <div class="container">
     <box>
       <text>Email</text>
-      <input class="input" placeholder="sample@sample.com" />
+      <input v-model="store.email" class="input" placeholder="sample@sample.com" />
       <text>Password</text>
-      <input type="password" class="input" placeholder="sample password" />
+      <input v-model="store.password" type="password" class="input" placeholder="sample password" />
       <button class="button">Login</button>
       <div class="federated">
         <button class="button">Google</button>
@@ -42,7 +47,7 @@
 
 .input {
   padding: 15px;
-  border: 1px solid rgb(176, 176, 176);;
+  border: 1px solid rgb(176, 176, 176);
   border-top: none;
   border-left: none;
   border-right: none;
