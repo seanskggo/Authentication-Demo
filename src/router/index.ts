@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/create-account',
       name: 'Create Account',
       component: () => import('../views/CreateAccountView.vue')
+    },
+    {
+      path: '/delete-account',
+      name: 'Delete Account',
+      component: () => import('../views/DeleteAccount.vue')
     }
   ]
 })

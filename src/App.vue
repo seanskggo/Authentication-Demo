@@ -20,6 +20,7 @@ const credentials = credentialsStore()
         <RouterLink to="/">Login</RouterLink>
         <RouterLink to="/create-account">Create Account</RouterLink>
         <RouterLink to="/reset-password">Reset Password</RouterLink>
+        <RouterLink to="/delete-account">Delete Account</RouterLink>
       </nav>
       <h4>Console</h4>
       <divider class="divider" />

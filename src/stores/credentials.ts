@@ -56,7 +56,7 @@ export const credentialsStore = defineStore({
         })
         .catch((e) => this.status = e.message)
     },
-    deleteUser() {
+    deleteAccount() {
       deleteUser(this.user)
         .then(async () => {
           this.user = {} as User
@@ -67,7 +67,7 @@ export const credentialsStore = defineStore({
           this.uid = ''
           this.email = ''
         })
-        .catch((e) => this.status = e.message)
+        .catch((e) => this.status = 'Error deleting account. Ensure you are logged in')
     }
   }
 })
