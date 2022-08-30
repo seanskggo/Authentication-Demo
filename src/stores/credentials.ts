@@ -67,7 +67,7 @@ export const credentialsStore = defineStore({
           this.uid = ''
           this.email = ''
         })
-        .catch((e) => this.status = 'Error deleting account. Ensure you are logged in')
+        .catch(() => this.status = 'Error deleting account. Ensure you are logged in')
     }
   }
 })
